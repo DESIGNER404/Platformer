@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeroInputReader : MonoBehaviour
 {
-    private Hero _hero;
+    [SerializeField] private Hero _hero;
 
     private void Awake()
     {

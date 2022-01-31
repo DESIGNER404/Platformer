@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Hero : MonoBehaviour
 {
@@ -22,4 +21,5 @@ public class Hero : MonoBehaviour
             transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
         }
     }
+
 }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Hero : MonoBehaviour
 {
@@ -22,4 +21,8 @@ public class Hero : MonoBehaviour
         }
     }
 
+    public void SaySomething()
+    {
+        Debug.Log("Something");
+    }
 }

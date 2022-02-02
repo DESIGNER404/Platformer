@@ -6,19 +6,27 @@ public class HeroInputReader : MonoBehaviour
     [SerializeField] private Hero _hero;
 
     private HeroInputAction _inputActions;
+
     private void Awake()
     {
-        var inputActions = new HeroInputAction();
-        inputActions.Hero.HorizontalMovement.performed += OnHorizontalMovement;
+        _inputActions = new HeroInputAction();
+        _inputActions.Hero.HorizontalMovement.performed += OnHorizontalMovement;
+        _inputActions.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
+        _inputActions.Hero.SaySomething.performed += OnSaySomething;
     }
 
     private void OnEnable()
     {
         _inputActions.Enable();
     }
-    private void OnHorizontalMovement(InputAction.CallbackContext context)
+    public void OnHorizontalMovement(InputAction.CallbackContext)
     {
         var direction = context.ReadValue<float>();
         _hero.SetDirection(direction);
+    }
+
+    public void OnSaySomething(InputValue context)
+    {
+        _hero.SaySomething();
     }
 }

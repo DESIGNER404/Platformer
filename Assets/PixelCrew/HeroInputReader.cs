@@ -1,32 +1,44 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HeroInputReader : MonoBehaviour
+namespace PixelCrew
 {
-    [SerializeField] private Hero _hero;
-
-    private HeroInputAction _inputActions;
-
-    private void Awake()
+    public class HeroInputReader : MonoBehaviour
     {
-        _inputActions = new HeroInputAction();
-        _inputActions.Hero.HorizontalMovement.performed += OnHorizontalMovement;
-        _inputActions.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
-        _inputActions.Hero.SaySomething.performed += OnSaySomething;
-    }
+        [SerializeField] private Hero _hero;
 
-    private void OnEnable()
-    {
-        _inputActions.Enable();
-    }
-    public void OnHorizontalMovement(InputAction.CallbackContext)
-    {
-        var direction = context.ReadValue<float>();
-        _hero.SetDirection(direction);
-    }
+        private HeroInputActions _inputActions;
 
-    public void OnSaySomething(InputValue context)
-    {
-        _hero.SaySomething();
+        private void Awake()
+        {
+            _inputActions = new HeroInputActions();
+            _inputActions.Hero.HorizontalMovement.performed += OnHorizontalMovement;
+            _inputActions.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
+            _inputActions.Hero.VerticalMovement.performed += OnVerticalMovement;
+            _inputActions.Hero.VerticalMovement.canceled += OnVerticalMovement;
+            _inputActions.Hero.SaySomething.performed += OnSaySomething;
+        }
+
+        private void OnEnable()
+        {
+            _inputActions.Enable();
+        }
+
+        private void OnHorizontalMovement(InputAction.CallbackContext context)
+        {
+            var direction = context.ReadValue<float>();
+            _hero.SetDirectionHorizontal(direction);
+        }
+
+        private void OnVerticalMovement(InputAction.CallbackContext context)
+        {
+            var direction = context.ReadValue<float>();
+            _hero.SetDirectionVertical(direction);
+        }
+
+        private void OnSaySomething(InputAction.CallbackContext context)
+        {
+            _hero.SaySomething();
+        }
     }
 }

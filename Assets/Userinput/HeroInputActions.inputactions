@@ -6,9 +6,17 @@
             "id": "5c36f88d-b976-463b-9bee-9df0a080c30d",
             "actions": [
                 {
-                    "name": "HorizontalMovment",
+                    "name": "HorizontalMovement",
                     "type": "Button",
                     "id": "d7cddc19-9222-4192-9f63-fc9ec1297a65",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "VerticalMovement",
+                    "type": "Button",
+                    "id": "5b2cbc73-6447-40d5-8332-b5653e5486f3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -30,7 +38,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -41,7 +49,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -52,7 +60,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -63,7 +71,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -74,7 +82,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,7 +93,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HorizontalMovment",
+                    "action": "HorizontalMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -99,6 +107,39 @@
                     "action": "SaySomething",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Kayboard",
+                    "id": "2f90883d-600d-42b3-a483-d6749f0380d2",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalMovement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "45c38988-b3a9-460e-98e9-8bc3c9a4021a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "5e7de2e2-a67c-4820-b78a-ed5d8c990352",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VerticalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

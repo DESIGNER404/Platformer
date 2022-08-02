@@ -19,9 +19,17 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
             ""id"": ""5c36f88d-b976-463b-9bee-9df0a080c30d"",
             ""actions"": [
                 {
-                    ""name"": ""HorizontalMovment"",
+                    ""name"": ""HorizontalMovement"",
                     ""type"": ""Button"",
                     ""id"": ""d7cddc19-9222-4192-9f63-fc9ec1297a65"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""VerticalMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b2cbc73-6447-40d5-8332-b5653e5486f3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -43,7 +51,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -54,7 +62,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -65,7 +73,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -76,7 +84,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -87,7 +95,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -98,7 +106,7 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HorizontalMovment"",
+                    ""action"": ""HorizontalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -112,6 +120,39 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
                     ""action"": ""SaySomething"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Kayboard"",
+                    ""id"": ""2f90883d-600d-42b3-a483-d6749f0380d2"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""45c38988-b3a9-460e-98e9-8bc3c9a4021a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""5e7de2e2-a67c-4820-b78a-ed5d8c990352"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VerticalMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -120,7 +161,8 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
 }");
         // Hero
         m_Hero = asset.FindActionMap("Hero", throwIfNotFound: true);
-        m_Hero_HorizontalMovment = m_Hero.FindAction("HorizontalMovment", throwIfNotFound: true);
+        m_Hero_HorizontalMovement = m_Hero.FindAction("HorizontalMovement", throwIfNotFound: true);
+        m_Hero_VerticalMovement = m_Hero.FindAction("VerticalMovement", throwIfNotFound: true);
         m_Hero_SaySomething = m_Hero.FindAction("SaySomething", throwIfNotFound: true);
     }
 
@@ -171,13 +213,15 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     // Hero
     private readonly InputActionMap m_Hero;
     private IHeroActions m_HeroActionsCallbackInterface;
-    private readonly InputAction m_Hero_HorizontalMovment;
+    private readonly InputAction m_Hero_HorizontalMovement;
+    private readonly InputAction m_Hero_VerticalMovement;
     private readonly InputAction m_Hero_SaySomething;
     public struct HeroActions
     {
         private @HeroInputActions m_Wrapper;
         public HeroActions(@HeroInputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @HorizontalMovment => m_Wrapper.m_Hero_HorizontalMovment;
+        public InputAction @HorizontalMovement => m_Wrapper.m_Hero_HorizontalMovement;
+        public InputAction @VerticalMovement => m_Wrapper.m_Hero_VerticalMovement;
         public InputAction @SaySomething => m_Wrapper.m_Hero_SaySomething;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
@@ -188,9 +232,12 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_HeroActionsCallbackInterface != null)
             {
-                @HorizontalMovment.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovment;
-                @HorizontalMovment.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovment;
-                @HorizontalMovment.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovment;
+                @HorizontalMovement.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovement;
+                @HorizontalMovement.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovement;
+                @HorizontalMovement.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnHorizontalMovement;
+                @VerticalMovement.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnVerticalMovement;
+                @VerticalMovement.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnVerticalMovement;
+                @VerticalMovement.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnVerticalMovement;
                 @SaySomething.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
                 @SaySomething.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
                 @SaySomething.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnSaySomething;
@@ -198,9 +245,12 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @HorizontalMovment.started += instance.OnHorizontalMovment;
-                @HorizontalMovment.performed += instance.OnHorizontalMovment;
-                @HorizontalMovment.canceled += instance.OnHorizontalMovment;
+                @HorizontalMovement.started += instance.OnHorizontalMovement;
+                @HorizontalMovement.performed += instance.OnHorizontalMovement;
+                @HorizontalMovement.canceled += instance.OnHorizontalMovement;
+                @VerticalMovement.started += instance.OnVerticalMovement;
+                @VerticalMovement.performed += instance.OnVerticalMovement;
+                @VerticalMovement.canceled += instance.OnVerticalMovement;
                 @SaySomething.started += instance.OnSaySomething;
                 @SaySomething.performed += instance.OnSaySomething;
                 @SaySomething.canceled += instance.OnSaySomething;
@@ -210,7 +260,8 @@ public class @HeroInputActions : IInputActionCollection, IDisposable
     public HeroActions @Hero => new HeroActions(this);
     public interface IHeroActions
     {
-        void OnHorizontalMovment(InputAction.CallbackContext context);
+        void OnHorizontalMovement(InputAction.CallbackContext context);
+        void OnVerticalMovement(InputAction.CallbackContext context);
         void OnSaySomething(InputAction.CallbackContext context);
     }
 }

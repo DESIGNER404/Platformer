@@ -5,8 +5,19 @@ namespace PixelCrew
     public class Hero : MonoBehaviour
     {
         [SerializeField] private float _speed;
+        [SerializeField] private float _jumpSpeed;
+
+        [SerializeField] private LayerCheck _groundCheck;
+
+        private Rigidbody2D _rigidbody;
 
         private float _directionHorizontal, _directionVertical;
+
+        //Импортируем компонент с коллаидер, который чекает землю
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
 
         public void SetDirectionHorizontal(float direction)
         {
@@ -18,20 +29,30 @@ namespace PixelCrew
             _directionVertical = direction;
         }
 
-        private void Update()
+        // метод FixedUpdate() используется для физики (физического перемещения)
+        private void FixedUpdate()
         {
-            if (_directionHorizontal != 0)
+            _rigidbody.velocity = new Vector2(_directionHorizontal * _speed, _rigidbody.velocity.y);
+
+            var isJumping = _directionVertical > 0;
+            if (isJumping)
             {
-                var delta = _directionHorizontal * _speed * Time.deltaTime;
-                var newXPosition = transform.position.x + delta;
-                transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
+                if (IsGrounded())
+                {
+                    _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+                }
+            
+                
             }
-            else if (_directionVertical != 0)
+            else if (_rigidbody.velocity.y > 0)
             {
-                var delta = _directionVertical * _speed * Time.deltaTime;
-                var newYPosition = transform.position.y + delta;
-                transform.position = new Vector3(transform.position.x, newYPosition, transform.position.z);
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
             }
+        }
+
+        private bool IsGrounded()
+        {
+            return _groundCheck.IsTouchingLayer;
         }
 
         public void SaySomething()

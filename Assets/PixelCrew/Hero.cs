@@ -84,7 +84,7 @@ namespace PixelCrew
 
         public void SaySomething()
         {
-            Debug.Log("ХУЙ ПИЗДА ДЖИГУРДА");
+            Debug.Log("gggg");
         }
     }
 

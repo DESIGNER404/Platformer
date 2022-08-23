@@ -267,20 +267,20 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.161">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.161.dll</HintPath>
-    </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.PackageManagerResolver_v1.2.161">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.161.dll</HintPath>
     </Reference>
     <Reference Include="Google.JarResolver_v1.2.161">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.161.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.161">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.161.dll</HintPath>
+    </Reference>
     <Reference Include="Google.IOSResolver_v1.2.161">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.161.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.161">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.161.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.21f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

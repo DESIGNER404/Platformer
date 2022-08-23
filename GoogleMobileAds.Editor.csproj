@@ -267,20 +267,20 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.161">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.161.dll</HintPath>
-    </Reference>
     <Reference Include="Google.VersionHandler">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.PackageManagerResolver_v1.2.161">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.161.dll</HintPath>
     </Reference>
     <Reference Include="Google.JarResolver_v1.2.161">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.161.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.161">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.161.dll</HintPath>
+    </Reference>
     <Reference Include="Google.IOSResolver_v1.2.161">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.161.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.PackageManagerResolver_v1.2.161">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.161.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

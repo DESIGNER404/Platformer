@@ -606,6 +606,9 @@
     <Reference Include="Cinemachine">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Monetization">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -614,6 +617,9 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
@@ -675,6 +681,9 @@
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements.Editor">
+      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -690,32 +699,23 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Monetization">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>/Users/aleksandrmakarov/Projects/Platformer/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.2D.PixelPerfect.Samples.Editor.csproj">
-      <Project>{C540FBAF-1110-8FD7-92D8-E7EDDD1B9D91}</Project>
-      <Name>Unity.2D.PixelPerfect.Samples.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.PixelPerfect.Samples.csproj">
-      <Project>{E9593E54-9ACF-CCEF-EF31-A9A3E8B724B9}</Project>
-      <Name>Unity.2D.PixelPerfect.Samples</Name>
-    </ProjectReference>
     <ProjectReference Include="GoogleMobileAds.csproj">
       <Project>{F0479368-BB3F-8DB8-CA29-0222862D7C2F}</Project>
       <Name>GoogleMobileAds</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.Samples.Editor.csproj">
+      <Project>{C540FBAF-1110-8FD7-92D8-E7EDDD1B9D91}</Project>
+      <Name>Unity.2D.PixelPerfect.Samples.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="GoogleMobileAds.Editor.csproj">
       <Project>{3E6402FA-BB02-3313-5395-507965E44E04}</Project>
       <Name>GoogleMobileAds.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.Samples.csproj">
+      <Project>{E9593E54-9ACF-CCEF-EF31-A9A3E8B724B9}</Project>
+      <Name>Unity.2D.PixelPerfect.Samples</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

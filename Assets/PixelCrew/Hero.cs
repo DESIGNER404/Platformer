@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Components;
+using UnityEngine;
 
 namespace PixelCrew
 {
@@ -6,9 +7,13 @@ namespace PixelCrew
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
+        [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private float _interactionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private LayerCheck _groundCheck;
 
+        private Collider2D[] _interactionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private SpriteRenderer _sprite;
@@ -18,6 +23,7 @@ namespace PixelCrew
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunning = Animator.StringToHash("is-running");
+        private static readonly int Hit = Animator.StringToHash("hit");
 
         private float _directionHorizontal, _directionVertical;
 
@@ -115,6 +121,26 @@ namespace PixelCrew
         public void SaySomething()
         {
             Debug.Log("gggg");
+        }
+
+        public void TakeDamage()
+        {
+            _animator.SetTrigger(Hit);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+        }
+
+        public void Ineract()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _interactionResult, _interactionLayer);
+            //return _groundCheck.IsTouchingLayer;
+            for (int i = 0; i < size; i++)
+            {
+                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 

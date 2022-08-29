@@ -64,9 +64,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PixelCrew\Components\DamageComponent.cs" />
     <Compile Include="Assets\PixelCrew\Components\DestroyObjectComponent.cs" />
+    <Compile Include="Assets\PixelCrew\Components\EnterCollisionComponent.cs" />
     <Compile Include="Assets\PixelCrew\Components\EnterTriggerComponent.cs" />
+    <Compile Include="Assets\PixelCrew\Components\HealthComponent.cs" />
+    <Compile Include="Assets\PixelCrew\Components\InteractableComponent.cs" />
     <Compile Include="Assets\PixelCrew\Components\ReloadLevelComponent.cs" />
+    <Compile Include="Assets\PixelCrew\Components\SwitchComponent.cs" />
     <Compile Include="Assets\PixelCrew\Hero.cs" />
     <Compile Include="Assets\PixelCrew\HeroInputReader.cs" />
     <Compile Include="Assets\PixelCrew\LayerCheck.cs" />
